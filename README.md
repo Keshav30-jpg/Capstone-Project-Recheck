@@ -71,7 +71,7 @@ PII detection checks for email addresses, phone numbers, customer IDs, SSN-style
 Examples: PaymentMethod=user@example.com → Blocked (PII Detected) and tenure=-3 → Rejected (Invalid Input).
 If the LLM is unavailable or returns invalid JSON, a model-based fallback explanation is used.
 
-### Tech Stack
+Tech Stack
 
 ![Python](https://shields.io)
 ![JSON Schema](https://shields.io)
@@ -85,6 +85,5 @@ If the LLM is unavailable or returns invalid JSON, a model-based fallback explan
 ![Seaborn](https://shields.io)
 ![LLM API](https://shields.io)
 ![Streamlit](https://shields.io)
-
 
 
