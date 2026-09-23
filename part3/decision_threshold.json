@@ -1,0 +1,26 @@
+{
+  "threshold": 0.45,
+  "selection_metric": "f1",
+  "selection": "out-of-fold probabilities on training folds",
+  "best_cv_auc": 0.7171960162880832,
+  "test_roc_auc": 0.7436810661764706,
+  "model": "Logistic Regression",
+  "best_params": {
+    "model__C": "10.0",
+    "model__solver": "liblinear"
+  },
+  "numeric_features": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "categorical_features": [
+    "gender",
+    "PhoneService",
+    "InternetService",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ]
+}
