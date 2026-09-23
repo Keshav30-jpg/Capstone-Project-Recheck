@@ -23,17 +23,17 @@ The Part 2 threshold sweep is an academic experiment; the production threshold i
  Part 3 — Model Selection & Production Pipeline:
  ensemble_pipeline.py compares Logistic Regression, Controlled Decision Tree, Random Forest, and Gradient Boosting.
  Leakage-Safe 5-Fold CV
-
+```text
  Model                            Mean CV AUC                Std Dev
  Logistic Regression               0.7161                     0.0251
  Controlled Decision Tree          0.6946                     0.0494
  Random Forest                     0.6810                     0.0476
  Gradient Boosting                 0.6805                     0.0344
 Selected model: Logistic Regression.
-
+```
 GridSearchCV: C=10.0, solver=liblinear, best CV ROC-AUC 0.7172.
 Production threshold: 0.45, selected from out-of-fold training probabilities with OOF F1 0.5928.
-
+```text
 Final Untouched Test:
 
 Metric                   Result
@@ -41,14 +41,14 @@ ROC-AUC                  0.7437
 Precision                0.5140
 Recall                   0.8594
 F1-Score                 0.6433
-
+```
 Confusion Matrix: [[84, 52], [9, 55]]
 Artifacts: best_model.pkl, decision_threshold.json, learning_curve.png.
 
 Part 4 — Production Inference & AI Explanation:
 
 app.py accepts raw customer features and runs:
-
+```text
 Raw Features
  ↓
 PII Detection → Normalization → Schema Validation
@@ -60,11 +60,10 @@ Frozen Threshold 0.45 → Prediction + Confidence
 Model Drivers → LLM Explanation → JSON Validation
  ↓
 Final Structured Response
-
+```
 Confidence Rules:
 ≥0.70 or ≤0.30 → High | ≥0.55 or ≤0.45 → Medium | otherwise → Low.
 The LLM receives the already-computed prediction, probability, confidence, and model drivers. The application validates its JSON response and keeps the ML-derived prediction/confidence.
-
 
 Guardrails:
 PII detection checks for email addresses, phone numbers, customer IDs, SSN-style values, and long card/payment-number patterns.
