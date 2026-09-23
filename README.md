@@ -75,7 +75,4 @@ Tech Stack:
 Python · Pandas · NumPy · Scikit-learn · Matplotlib · Seaborn · Joblib · JSON Schema · Requests · python-dotenv · LLM API · Streamlit
 
 
-![LLM API](https://shields.io)
-![Streamlit](https://shields.io)
-
 
